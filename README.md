@@ -1,32 +1,37 @@
-# FlutterForecast 앱 ⛅️
+# FlutterForecast App ⛅️
 
-FlutterForecast는 날씨에 따라 배경 이미지가 동적으로 변경되며, 현재 온도와 날씨 설명을 표시하는 Flutter 기반의 모바일 앱입니다.
+FlutterForecast is a Flutter-based mobile app that dynamically changes the background image based on the weather and displays the current temperature and weather description.
 
-## 주요 기능
+## Key Features
 
-- 실시간으로 변하는 날씨에 따라 배경 이미지 업데이트
-- 현재 위치의 온도 및 날씨 설명 표시
+- Real-time background image updates based on changing weather conditions
+- Display of current temperature and weather description for the user's location
+- Display of city name based on the user's location
 
+## Used Packages
 
-## 사용된 패키지
-- [geolocator](https://pub.dev/packages/geolocator): 위치 정보 획득
-- [http](https://pub.dev/packages/http): OpenWeatherMap API 호출
-- [dotenv](https://pub.dev/packages/flutter_dotenv): 환경 변수 관리
+- [geolocator](https://pub.dev/packages/geolocator): Location information retrieval
+- [http](https://pub.dev/packages/http): OpenWeatherMap API calls
+- [dotenv](https://pub.dev/packages/flutter_dotenv): Environment variable management
 
-## 설정
+## Setup
 
-1. OpenWeatherMap API Key 획득(회원 가입 필요)
-2. 프로젝트 루트 디렉터리에 `.env` 파일 생성
-3. `.env. sample` 파일을 참고하여 api key 추가
-   
-## 사용법
+1. Obtain an OpenWeatherMap API Key.
+2. Create a `.env` file in the project root directory.
+3. Add the API Key to the `.env` file as follows:
 
-1. 앱을 실행하면 현재 위치의 날씨 정보가 표시됩니다.
-2. 앱에서 배경 이미지와 현재 날씨 정보를 확인하세요.
+```plaintext
+WEATHER_API_KEY=Your_OpenWeatherMap_API_Key
+```
 
-## 주의사항
+## Usage
 
-- 안정적인 인터넷 연결이 필요합니다.
-- 위치 권한을 허용해야 정확한 날씨 정보를 받아올 수 있습니다.
+1. When you run the app, the weather information for the current location will be displayed.
+2. Check the background image and current weather information in the app.
+
+## Notes
+
+- A stable internet connection is required.
+- Location permission must be granted to obtain accurate weather information.
 
 
