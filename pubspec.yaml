@@ -39,6 +39,7 @@ dependencies:
   http: ^1.1.0
   get: ^4.6.6
   permission_handler: ^11.0.1
+  flutter_native_splash: ^2.3.7
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,9 @@ flutter:
     - images/Clouds.jpg
     - images/Clear.jpg
     - images/Intro.jpg
+    - images/Mist.jpg
+    - images/Splash.png
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
