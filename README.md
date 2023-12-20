@@ -2,7 +2,14 @@
 
 ![Splash png 17-21-10-020](https://github.com/Dumibell/FlutterForecast/assets/100185602/dc240a5a-7331-40bb-8312-59487816a432)
 
+
 FlutterForecast is a Flutter-based mobile app that dynamically changes the background image based on the weather and displays the current temperature and weather description.
+
+## Demo
+
+![flutter_weather_app_demo](https://github.com/Dumibell/FlutterForecast/assets/100185602/f1e90daf-301e-4165-aae6-fa6f79e50ef6)
+
+Here is a quick demo of how the app looks and works. Watch the screencast to see the features in action.
 
 ## Key Features
 
