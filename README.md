@@ -17,6 +17,9 @@ Here is a quick demo of how the app looks and works. Watch the screencast to see
 - Display of current temperature and weather description for the user's location
 - Display of city name based on the user's location
 
+## Used Open API
+- [OpenWeatherMap](https://openweathermap.org/): Real-time weather data for the current location
+
 ## Used Packages
 
 - [geolocator](https://pub.dev/packages/geolocator): Location information retrieval
