@@ -20,7 +20,7 @@ Here is a quick demo of how the app looks and works. Watch the screencast to see
 ## Used Packages
 
 - [geolocator](https://pub.dev/packages/geolocator): Location information retrieval
-- [http](https://pub.dev/packages/http): OpenWeatherMap API calls
+- [http](https://pub.dev/packages/http): Making API calls
 - [dotenv](https://pub.dev/packages/flutter_dotenv): Environment variable management
 - [flutter_native_splash](https://pub.dev/packages/flutter_native_splash): Customized native splash screen
 - [loading_animation_widget](https://pub.dev/packages/loading_animation_widget): Loading animation during data retrieval
