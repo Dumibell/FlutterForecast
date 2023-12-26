@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -58,5 +55,14 @@ class DefaultFirebaseOptions {
     messagingSenderId: '281610252342',
     projectId: 'push-notification-11139',
     storageBucket: 'push-notification-11139.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyATFpG8WpPtQNZ1uVPtjQJBWbSdV-SfR4Q',
+    appId: '1:281610252342:ios:83dec1046279bdb9c76897',
+    messagingSenderId: '281610252342',
+    projectId: 'push-notification-11139',
+    storageBucket: 'push-notification-11139.appspot.com',
+    iosBundleId: 'com.example.flutterWeather',
   );
 }
