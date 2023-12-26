@@ -13,7 +13,6 @@ class ApiService {
     if (response.statusCode == 200) {
       Map<String, dynamic> jsonData = jsonDecode(response.body);
       WeatherData weatherData = WeatherData.fromJson(jsonData);
-
       return weatherData;
     } else {
       throw Exception("Failed to get weather data");
