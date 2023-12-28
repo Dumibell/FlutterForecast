@@ -3,7 +3,7 @@ import 'package:flutter_weather/models/weather_model.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class WeatherScreen extends StatefulWidget {
-  final WeatherData weatherData;
+  final CurrentWeatherResponse weatherData;
   final bool isLoading;
 
   const WeatherScreen({
@@ -24,89 +24,71 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: const Duration(seconds: 1),
-      child: Container(
-        // 배경이미지 전환될 때 애니메이션 적용
-        key: Key(widget.weatherData.weather[0].main),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.1), BlendMode.srcOver),
-              image: AssetImage(
-                  "images/${widget.weatherData.weather[0].main}.jpg"),
-              fit: BoxFit.cover),
-        ),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: DefaultTextStyle(
-            style: const TextStyle(color: Colors.white),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 30),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 45,
-                    child: Center(
-                        child: widget.isLoading
-                            ? LoadingAnimationWidget.staggeredDotsWave(
-                                color: Colors.white, size: 30)
-                            : Text(
-                                widget.weatherData.name,
-                                style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              )),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.end,
+    return DefaultTextStyle(
+      style: const TextStyle(color: Colors.white),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              height: 45,
+              child: Center(
+                  child: widget.isLoading
+                      ? LoadingAnimationWidget.staggeredDotsWave(
+                          color: Colors.white, size: 30)
+                      : Text(
+                          widget.weatherData.name,
+                          style: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        )),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      getCelsius(widget.weatherData.main.temp),
+                      style: const TextStyle(
+                          fontSize: 44, fontWeight: FontWeight.w600),
+                    ),
+                    DefaultTextStyle(
+                      style: const TextStyle(fontSize: 15),
+                      child: Wrap(
+                        spacing: 5,
                         children: [
                           Text(
-                            getCelsius(widget.weatherData.main.temp),
-                            style: const TextStyle(
-                                fontSize: 44, fontWeight: FontWeight.w600),
-                          ),
-                          DefaultTextStyle(
-                            style: const TextStyle(fontSize: 15),
-                            child: Wrap(
-                              spacing: 5,
-                              children: [
-                                Text(
-                                    "H: ${getCelsius(widget.weatherData.main.tempMax)}"),
-                                Text(
-                                    "L: ${getCelsius(widget.weatherData.main.tempMin)}"),
-                              ],
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                widget.weatherData.weather[0].description,
-                                style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w400),
-                              ),
-                              Image.network(
-                                "https://openweathermap.org/img/wn/${widget.weatherData.weather[0].icon}@2x.png",
-                                width: 30,
-                                height: 30,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          )
+                              "H: ${getCelsius(widget.weatherData.main.tempMax)}"),
+                          Text(
+                              "L: ${getCelsius(widget.weatherData.main.tempMin)}"),
                         ],
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          widget.weatherData.weather[0].description,
+                          style: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w400),
+                        ),
+                        Image.network(
+                          "https://openweathermap.org/img/wn/${widget.weatherData.weather[0].icon}@2x.png",
+                          width: 30,
+                          height: 30,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    )
+                  ],
+                ),
+              ],
             ),
-          ),
+          ],
         ),
       ),
     );
