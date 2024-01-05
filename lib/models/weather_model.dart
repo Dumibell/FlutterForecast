@@ -51,14 +51,14 @@ class CurrentWeatherResponse {
 }
 
 class Coord {
-  double lon, lat;
+  num lon, lat;
 
   Coord({required this.lon, required this.lat});
 
   factory Coord.fromJson(Map<String, dynamic> json) {
     return Coord(
-      lon: json['lon'].toDouble(),
-      lat: json['lat'].toDouble(),
+      lon: json['lon'],
+      lat: json['lat'],
     );
   }
 }
@@ -233,7 +233,7 @@ class WeatherItem {
 }
 
 class Rain {
-  double h3;
+  num h3;
 
   Rain({required this.h3});
 

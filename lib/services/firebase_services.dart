@@ -21,16 +21,15 @@ class FirebaseApi {
   }
 
   // function to handle received messages
-
   void handleMessage(RemoteMessage? message) {
     //if the message is null, do nothing
     if (message == null) return;
 
     // navigate to new screen when message is received and user tabs notification
-    navigatorKey.currentState?.pushNamed(
-      "/notification_screen",
-      arguments: message,
-    );
+    // navigatorKey.currentState?.pushNamed(
+    //   "/notification_screen",
+    //   arguments: message,
+    // );
   }
 
   // function to initialize foreground and background settings

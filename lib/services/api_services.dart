@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_weather/models/weather_model.dart';
 import "package:http/http.dart" as http;
@@ -17,6 +16,7 @@ class ApiService {
       Map<String, dynamic> jsonData = jsonDecode(response.body);
       CurrentWeatherResponse weatherData =
           CurrentWeatherResponse.fromJson(jsonData);
+      // print(jsonData);
       return weatherData;
     } else {
       throw Exception("Failed to get weather data");
@@ -32,9 +32,10 @@ class ApiService {
       Map<String, dynamic> jsonData = jsonDecode(response.body);
       HourlyWeatherResponse weatherData =
           HourlyWeatherResponse.fromJson(jsonData);
-
+      // print(jsonData);
       return weatherData;
     } else {
+      // print(response);
       throw Exception("Failed to get weather data");
     }
   }
